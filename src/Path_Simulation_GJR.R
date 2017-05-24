@@ -12,10 +12,10 @@ path_simulation_GJR <- function (Returns, Preco_inicial_acao, N_dias, N_sim) {
 
   #dist_inov t for t-student N for Normal
 
-  spec.gjrGARCH = ugarchspec(variance.model=list (model="gjrGARCH", garchOrder=e
-    (1,1)), mean.model=list (armaOrder=e(1,1), include.mean=TRUE), distribution.model="std")
+  spec.gjrGARCH = ugarchspec(variance.model=list (model="gjrGARCH", garchOrder=c
+    (1,1)), mean.model=list (armaOrder=c(1,1), include.mean=TRUE), distribution.model="std")
 
-  fit.garch=e(0,0)
+  fit.garch=c(0,0)
 
   options(show.error.messages=FALSE)
   try(

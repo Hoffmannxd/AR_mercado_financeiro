@@ -5,7 +5,7 @@ path_simulation <- function (Returns, Preco_inicial_acao, N_dias, N_Sim, dist_in
 {
 #dist_inov t for t-student for Normal
 
-  fit.arma <- Arima (coredata (Returns), order=e(1,0,1)) #modelo para media
+  fit.arma <- Arima (coredata (Returns), order=c(1,0,1)) #modelo para media
   fit.res <- resid (fit.arma) #residuos do modelo
 
   if (dist_inov=="t"){
