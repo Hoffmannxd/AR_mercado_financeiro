@@ -1,6 +1,20 @@
+
+library(rugarch)
+library(graphics)
+library(RQuantLib)
+library(ggplot2)
+library(fExtremes)
+library(fGarch)
+library(forecast)
+library(tseries)
+library(timeSeries)
+library(quantmod)
+library(PerformanceAnalytics)
+
+
 ########## Calculo Maximo Drawdown de uma Serie #########
 
-cale_MDD <- function (precos_array)
+calc_MDD <- function (precos_array)
 
 {
 
@@ -133,10 +147,10 @@ path_simulation <- function (Returns, Preco_inicial_acao, N_dias, N_Sim, dist_in
         if(dist_inov=="t"){
           inov=pp.rt(1,df)
         } else {
-          inov = rnorm(1,0,1)
+          inov=rnorm(1,0,1)
         }
 
-      simulate_return=inov*desvio_hat +media_hat
+      simulate_return=inov*desvio_hat+media_hat
 
       ht_alpha_0+((simulate_return-media_hat)^2)*alpha_1 + ht_ant*beta_1
 
@@ -198,7 +212,7 @@ path_simulation_GJR <- function (Returns, Preco_inicial_acao, N_dias, N_sim) {
  alpha0 = coef(fit.garch)[["omega"]]
 
  if(is.null(alpha0)){
-  result <- list(drawdowns_array=Drawdown_sim[,1]), drawdowns_array_lenght=
+  result <- list(drawdowns_array=Drawdown_sim[,1], drawdowns_array_lenght=
     Drawdown_sim[,2], precos_sim=Precos, volatilidades_sim=Volatilidade)
 
   return(result)
@@ -278,10 +292,10 @@ backteste_models <- function (ticker, data_inicio, data_fim, alpha_list, n_dias,
   stockData <- new.env() #Faz novo ambiente para quantmod pra guardar os dados
   startDate = as.Date(data_inicio) #Especifica o periodo de tempo que estamos interessados
   endDate = as.Date(data_fim)
-  tickers <- e(ticker) #define os tickers que eh de interesse
+  tickers <- c(ticker) #define os tickers que eh de interesse
 
   #Baixar o historico para todos os tickers
-  supressWarnings(getsymbols(tickers, env = stockData, src = "yahoo", from = startDate, to = endDate))
+  suppressWarnings(getSymbols(tickers, env = stockData, src = "yahoo", from = startDate, to = endDate))
 
   #Coloca retornos em uma matriz
   Returns <- eapply(stockData, function(s) ROC(Ad(s), type = "continous")) #retornos nos log returns ajustados
@@ -309,7 +323,7 @@ backteste_models <- function (ticker, data_inicio, data_fim, alpha_list, n_dias,
     S_Returns=ReturnsDF$SPY[(i-inicio+1):i]
 
     DD_Array[j,1]= i
-    DD_Array[j,2]= cale_MDD(preco_real[i:(i+n_dias+1)]) $MDD #Drawdown Observado
+    DD_Array[j,2]= calc_MDD(preco_real[i:(i+n_dias+1)]) $MDD #Drawdown Observado
 
     x=path_simulation(Return=S_Returns,Preco_inicial_acao=100, N_dias=n_dias, N_sim=N_sim, dist_inov="t")
 
@@ -338,7 +352,7 @@ backteste_models <- function (ticker, data_inicio, data_fim, alpha_list, n_dias,
     i=i+step
     j=j+1
 
-    if(print_evolution=TRUE){
+    if(print_evolution==TRUE){
       print (i)
     }
   }
@@ -351,6 +365,6 @@ backteste_models <- function (ticker, data_inicio, data_fim, alpha_list, n_dias,
 
 #### Rotina principal para chamar o backtest ####
 
-resultado = backteste_models(ticker="SPY", data_inicio="1995-01-01", data=fim"2014-09-01", alpha_list=c(0.01,0.025,0.05), n_dias=22, N_sim=10000, step=5, inicio=1500, print_evolution=TRUE)
+resultado = backteste_models(ticker="SPY", data_inicio="1995-01-01", data_fim="2014-09-01", alpha_list=c(0.01,0.025,0.05), n_dias=22, N_sim=10000, step=5, inicio=1500, print_evolution=TRUE)
 
 write.csv (x$drawdowns_backtest, file = "IBOV.csv")
