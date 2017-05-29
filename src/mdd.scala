@@ -17,3 +17,34 @@ object HelloWorld {
     sc.stop()
   }
 }
+
+
+package bigdata.spark_apps
+
+import org.apache.spark.sql.SparkSession
+
+object Mdd {
+  def main( args: Array[String] ) = {
+    
+    val spark = SparkSession.builder().master("local[2]").appName("Mdd app").getOrCreate()
+       
+    val path = "/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/dummy_data.json";
+    val df_mdd = spark.sqlContext.read.json(path);
+    
+    df_mdd.show();
+  
+  }
+}
+
+
+	<dependency>
+	    <groupId>org.apache.spark</groupId>
+	    <artifactId>spark-core_2.10</artifactId>
+	    <version>2.1.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql_2.11 -->
+	<dependency>
+	    <groupId>org.apache.spark</groupId>
+	    <artifactId>spark-sql_2.11</artifactId>
+	    <version>2.1.0</version>
+	</dependency>
