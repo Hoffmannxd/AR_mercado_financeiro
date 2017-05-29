@@ -1,13 +1,15 @@
-# Setups to run on scala ide eclipse
+# Como usar apache-spark com scala
 
-## Install scala
-Don't really know if is need, try to skip this one, if get any problems install and then go again.
+## Instalar o scala
+Instale o scala seguindo os manual desta página
+[Link página do scala](https://www.scala-lang.org/download/install.html)
 
 ## Install spark 
-Go to apache spark page and download spark core version 2.1.0. The instructions to install are on README.md - inside spark-2.1.0 folder.
+Baixe e instale o apache-spark core versao 2.1.0. As intruçoes estao no README.md - dentro da pasta "spark-2.1.0".
 [Link to apache download page](https://spark.apache.org/downloads.html)
 
 ## Install sbt
+Instale o gerenciado de pacotes sbt
 [Link to sbt-scala page](http://www.scala-sbt.org/download.html)
 
 ## Follow this to make project work
