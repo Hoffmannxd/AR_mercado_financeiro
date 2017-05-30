@@ -1,12 +1,13 @@
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.DataFrame
 
 object mddApp {
     def main(args: Array[String]) {
-        val spark = SparkSession.builder().master("local[*]").appName("Mdd app").getOrCreate()
-        val path = "../../../../data/serieHistorica.txt";
-        val df_mdd = spark.sqlContext.read.format("csv").load
+        
+        val path = "./../data/serieHistorica.csv";
+        val df_mdd = readPriceFromCsvData(path);//data frame
+        val n_prices = df_mdd.select("Index").count();//size of prices array
 
-        df_mdd.show();
 
         //calc mdd split into functions
         val testList = Array(100.0,102,105,103,99,98,101,95,100,101);
@@ -32,5 +33,11 @@ object mddApp {
             }
         }
 
+    }
+
+    def readPriceFromCsvData(path: String) : DataFrame = {
+        val spark = SparkSession.builder().master("local[*]").appName("Mdd app").getOrCreate();
+        val df_mdd = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load(path);
+        return (df_mdd);
     }
 }
