@@ -1,0 +1,41 @@
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
+[0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	added: Set(/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/mddApp.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/mddApp.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/mddApp.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/mddApp.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 2bd3e9a1, interfacing (CompilerInterface) with Scala compiler version 2.10.6[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes:/home/aracy_t/.sbt/boot/scala-2.10.6/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/target/scala-2.10/classes[0m
+[0m[[31merror[0m] [0m/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/mddApp.scala:1: object apache is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.apache.spark.sql.SparkSession[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/mddApp.scala:2: object apache is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.apache.spark.sql.DataFrame[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/mddApp.scala:14: not found: type DataFrame[0m
+[0m[[31merror[0m] [0m    def readPriceFromCsvData(path: String) : DataFrame = {[0m
+[0m[[31merror[0m] [0m                                             ^[0m
+[0m[[31merror[0m] [0m/home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/src/main/scala/mddApp.scala:15: not found: value SparkSession[0m
+[0m[[31merror[0m] [0m        val spark = SparkSession.builder().master("local[*]").appName("Mdd app").getOrCreate();[0m
+[0m[[31merror[0m] [0m                    ^[0m
+[0m[[31merror[0m] [0mfour errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(compile:[31mcompileIncremental[0m) Compilation failed[0m
