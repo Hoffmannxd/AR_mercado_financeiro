@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    background-color: #4286f4;
+}
+
+body {
+    color: white;
+    font-family: sans-serif, helvetica, verdana;
+}
+
+.label {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-size: 1.6em;
+    padding-bottom:17px;
+    color: white;
+    font-weight: 900;
+}
+
+.filter {
+    width: 40%;
+    margin-top:15px;
+    margin-left: auto;
+    margin-right: auto;
+    //border: 2px solid white;
+    //border-radius: 30px;
+    padding: 0px 0px;
+}
+
+.filter__title {
+    display: block;
+    text-align: center;
+    padding: 40px 0px 40px 0px;
+    font-size: 2.1em;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.filter__input-area {
+    border-top: 10px solid #7fa7e8;
+    border-bottom: 2px solid #7fa7e8;
+    border-radius: 20px;
+    padding-top: 60px;
+}
+
+
+.filter__date {
+    display: block;
+    margin: 0px auto 50px auto;
+    width: 80%;
+    font-size: 1.6em;
+    text-align: left;
+    border: none;
+    border-bottom: 3px solid white;
+    border-radius: 10px;
+    min-height: 45px;
+    font-weight: 300;
+    color: white;
+}
+
+
+.filter__range {
+    display: block;
+    margin: 0px auto 50px auto;
+    width: 80%;
+    font-size: 1.4em;
+    text-align: left;
+    border: none;
+    border-bottom: 3px solid white;
+    border-radius: 10px;
+    font-size: 1.4em;
+    min-height: 45px;
+    font-weight: 300;
+    color: white;
+}
+
+.filter__target {
+    display: block;
+    margin: 0px auto 50px auto;
+    width: 80%;
+    font-size: 1.4em;
+    border: none;
+    border-bottom: 3px solid white;
+    border-radius: 10px;
+    font-size: 1.4em;
+    min-height: 45px;
+    font-weight: 300;
+    color: white;
+}
+
+
+.filter__button {
+    display: block;
+    margin: 40px auto 50px auto;
+    padding: 15px 0px;
+    text-align: center;
+    min-width: 50%;
+    font-size: 1.4em;
+    font-weight: 900;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: #4F93FF;
+}
