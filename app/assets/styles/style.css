@@ -13,16 +13,21 @@ body {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    text-align: left;
     font-size: 1.6em;
     padding-bottom:17px;
     color: white;
+    font-weight: 900;
 }
 
 .filter {
     width: 40%;
+    margin-top:15px;
     margin-left: auto;
     margin-right: auto;
+    //border: 2px solid white;
+    //border-radius: 30px;
+    padding: 0px 0px;
 }
 
 .filter__title {
@@ -35,48 +40,68 @@ body {
 }
 
 .filter__input-area {
-    border-top: 5px solid #7fa7e8;
+    border-top: 10px solid #7fa7e8;
+    border-bottom: 2px solid #7fa7e8;
     border-radius: 20px;
     padding-top: 60px;
 }
+
 
 .filter__date {
     display: block;
     margin: 0px auto 50px auto;
     width: 80%;
-    font-size: 1.4em;
-    text-align: center;
+    font-size: 1.6em;
+    text-align: left;
     border: none;
     border-bottom: 3px solid white;
     border-radius: 10px;
-    padding-left: 60px; //postion fix;
     min-height: 45px;
+    font-weight: 300;
+    color: white;
 }
 
 
-/*
-* date styles END
-*/
-
 .filter__range {
     display: block;
-    margin: 0px auto 30px auto;
-    text-align: center;
-    width: 70px;
-    font-size: 1.3em;
+    margin: 0px auto 50px auto;
+    width: 80%;
+    font-size: 1.4em;
+    text-align: left;
+    border: none;
+    border-bottom: 3px solid white;
+    border-radius: 10px;
+    font-size: 1.4em;
+    min-height: 45px;
+    font-weight: 300;
+    color: white;
 }
 
 .filter__target {
     display: block;
-    margin: 0px auto 30px auto;
-    width: 70px;
-    font-size: 1.3em;
+    margin: 0px auto 50px auto;
+    width: 80%;
+    font-size: 1.4em;
+    border: none;
+    border-bottom: 3px solid white;
+    border-radius: 10px;
+    font-size: 1.4em;
+    min-height: 45px;
+    font-weight: 300;
+    color: white;
 }
+
 
 .filter__button {
     display: block;
     margin: 40px auto 50px auto;
+    padding: 15px 0px;
     text-align: center;
-    width: 70px;
-    font-size: 1.3em;
+    min-width: 50%;
+    font-size: 1.4em;
+    font-weight: 900;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: #4F93FF;
 }
