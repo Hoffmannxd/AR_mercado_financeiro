@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    background-color: #4286f4;
+}
+
+body {
+    color: white;
+    font-family: sans-serif, helvetica, verdana;
+}
+
+.label {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.6em;
+    padding-bottom:17px;
+    color: white;
+}
+
+.filter {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter__title {
+    display: block;
+    text-align: center;
+    padding: 40px 0px 40px 0px;
+    font-size: 2.1em;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.filter__input-area {
+    border-top: 5px solid #7fa7e8;
+    border-radius: 20px;
+    padding-top: 60px;
+}
+
+.filter__date {
+    display: block;
+    margin: 0px auto 50px auto;
+    width: 80%;
+    font-size: 1.4em;
+    text-align: center;
+    border: none;
+    border-bottom: 3px solid white;
+    border-radius: 10px;
+    padding-left: 60px; //postion fix;
+    min-height: 45px;
+}
+
+
+/*
+* date styles END
+*/
+
+.filter__range {
+    display: block;
+    margin: 0px auto 30px auto;
+    text-align: center;
+    width: 70px;
+    font-size: 1.3em;
+}
+
+.filter__target {
+    display: block;
+    margin: 0px auto 30px auto;
+    width: 70px;
+    font-size: 1.3em;
+}
+
+.filter__button {
+    display: block;
+    margin: 40px auto 50px auto;
+    text-align: center;
+    width: 70px;
+    font-size: 1.3em;
+}
