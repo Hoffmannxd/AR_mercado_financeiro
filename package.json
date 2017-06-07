@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/aracytopterm/AR_mercado_financeiro/issues"
   },
-  "homepage": "https://github.com/aracytopterm/AR_mercado_financeiro#readme"
+  "homepage": "https://github.com/aracytopterm/AR_mercado_financeiro#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }
