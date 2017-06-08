@@ -1,11 +1,13 @@
+const controller = require("./controller");
 const express = require('express');
 const app = express();
-var path    = require("path");
+var path = require("path");
 
 app.use(express.static("public"));
 
 app.get('/bla', function (req, res) {
     res.send("Execute analysis");
+    controller.exeCmd("pwd");
 });
 
 
