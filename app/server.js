@@ -5,10 +5,13 @@ var path = require("path");
 
 app.use(express.static("public"));
 
-app.get('/bla', function (req, res) {
-    res.send("Execute analysis");
+app.post('/ar_mf', function (req, res) {
+    req.on('data', function (data) {
+            console.log(data.toString());
+    });
     controller.exeCmd("pwd");
 });
+
 
 
 

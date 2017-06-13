@@ -10,18 +10,38 @@
         <div class="filter__title">ANALISYS PARAMETERS</div>
         <hr class="filter__divisor" />
         <div class="filter__input-area">
-            <span class="label">End date</span> <input type="date" class="filter__date"/>
-            <span class="label">Delt</span> <input type="number" min="1" class="filter__range" />
-            <span class="label">Index</span><select class="filter__target">
-                <option>
-                    BSP
-                </option>
-            </select>
-            <button class="filter__button">Ok!</button>
+            <form id="form_data" method="post">
+                <span class="label">End date</span> <input type="date" class="filter__date"/>
+                <span class="label">Delt</span> <input type="number" min="1" class="filter__range" />
+                <span class="label">Index</span><select class="filter__target">
+                    <option>
+                        BSP
+                    </option>
+                </select>
+                <button id="btn-exe" class="filter__button">Ok!</button>
+            </form>
         <hr class="filter__divisor" />
         </div>
 
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    $($('#form_data').on('submit', function(event){
+        event.preventDefault();
+
+        $.ajax({
+            url: '/ar_mf',
+            method: 'POST',
+            contentType: 'application/json',
+            data: "test",
+            success: function(response){
+                console.log(response);
+            }
+        });
+    }));
+    </script>
 </body>
+
 
 </html>
