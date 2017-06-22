@@ -9,15 +9,10 @@ app.post('/ar_mf', function (req, res) {
     req.on('data', function (data) {
             console.log(data.toString());
     });
-    controller.exeCmd("pwd");
+    controller.exeCmd("bash ./sh_runAnalysis/sh_runAnalysis.sh");
 });
 
 
-
-
-
-
-
-app.listen(3000, function () {
+app.listen(5000, function () {
     console.log("Server running on 3000 port");
 });
