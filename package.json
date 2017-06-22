@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/aracytopterm/AR_mercado_financeiro#readme",
   "dependencies": {
+    "chart.js": "^2.6.0",
     "express": "^4.15.3",
     "node-cmd": "^3.0.0"
   }
