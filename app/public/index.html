@@ -24,31 +24,46 @@
         <hr class="filter__divisor" />
         </div>
 
-        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
 
+    <div class="canvas-area" id="canvasArea">
+        <canvas id="myChart" height="180" ></canvas>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
-    function plotGraph(){
+    function plotGraph(data_response){
+        //set canvas to visivel
+        document.getElementById('canvasArea');
+        canvasArea.style.display = 'block';
+
         var ctx = document.getElementById('myChart');
+        ctx.style.backgroundColor = '#7fa7e8';
         var chart = new Chart(ctx, {
             // The type of chart we want to create
-            type: 'line',
-
-    // The data for our dataset
+            type: 'scatter',
             data: {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
                 datasets: [{
-                    label: "My First dataset",
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: [0, 10, 5, 2, 20, 30, 45],
+                    label: "Analysis grpah",
+                    borderColor:"#f03779",
+                    data: data_response
                 }]
             },
-
-            // Configuration options go here
-            options: {}
+            options: {
+                scales: {
+                    xAxes: [{
+                        type: 'linear',
+                    }]
+                },
+                layout: {
+                    padding : {
+                        left: 25,
+                        right: 25,
+                        top: 25,
+                        bottom: 25
+                    }
+                }
+            }
         });
     }
 
@@ -61,10 +76,16 @@
             contentType: 'application/json',
             data: "test",
             success: function(response){
-                plotGraph();
+                //console.log(response);
+                plotGraph(response);
             }
         });
     }));
+
+    $(document).ready(function() {
+        document.getElementById('canvasArea');
+        canvasArea.style.display = 'none';
+    })
     </script>
 </body>
 

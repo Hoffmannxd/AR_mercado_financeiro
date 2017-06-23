@@ -126,3 +126,10 @@ html {
     padding: 0px;
     color: white;
 }
+
+.canvas-area{
+    padding: 25px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}

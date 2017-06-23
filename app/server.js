@@ -14,10 +14,21 @@ app.post('/ar_mf', function (req, res) {
     controller.exeCmd("bash ./sh_runAnalysis/sh_runAnalysis.sh");
 
     //response
-    res.end("bla");
+
+    var JSON_response = [];
+    for(var i = 0; i < 8; i++) {
+        var JSON_point = new Object();
+        JSON_point.x= i+1;
+        JSON_point.y= i;
+        JSON_response.push(JSON_point);
+    }
+
+    console.log(JSON_response);
+    res.writeHead(200, {"Content-Type": "application/json"});
+    res.end(JSON.stringify(JSON_response));
 });
 
 
-app.listen(5000, function () {
+app.listen(3000, function () {
     console.log("Server running on 3000 port");
 });
