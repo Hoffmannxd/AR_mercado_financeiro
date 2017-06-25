@@ -12,9 +12,9 @@
         <hr class="filter__divisor" />
         <div class="filter__input-area">
             <form id="form_data" method="post">
-                <span class="label">End date</span> <input type="date" class="filter__date"/>
-                <span class="label">Delt</span> <input type="number" min="1" class="filter__range" />
-                <span class="label">Index</span><select class="filter__target">
+                <span class="label">End date</span> <input id="end_date" type="date" class="filter__date"/>
+                <span class="label">Delta</span> <input id="delta" type="number" min="1" class="filter__range" />
+                <span class="label">Index</span><select id="index" class="filter__target">
                     <option>
                         BSP
                     </option>
@@ -30,7 +30,7 @@
         <canvas id="myChart" height="180" ></canvas>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/jquery/jquery.min.js"></script>
     <script>
     function plotGraph(data_response){
         //set canvas to visivel
@@ -70,11 +70,26 @@
     $($('#form_data').on('submit', function(event){
         event.preventDefault();
 
+        var json_data = {};
+        var e_d = $("#end_date").val();
+        var d = $("#delta").val();
+        var idx = $("#index").val();
+
+        console.log(idx);
+
+
+        json_data.end_date= e_d;
+        json_data.delta= d;
+        json_data.index= idx;
+
+
+        console.log(json_data);
+
         $.ajax({
             url: '/ar_mf',
             method: 'POST',
             contentType: 'application/json',
-            data: "test",
+            data: JSON.stringify(json_data),
             success: function(response){
                 //console.log(response);
                 plotGraph(response);
