@@ -18,6 +18,7 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
+import scala.math._
 import org.apache.spark.{SparkConf, SparkContext}
 // $example on$
 import org.apache.spark.mllib.linalg.Vectors
@@ -28,11 +29,11 @@ object SummaryStatisticsExample {
 
   def main(args: Array[String]): Unit = {
 
-    val conf = new SparkConf().setAppName("SummaryStatisticsExample")
+    val conf = new SparkConf().setAppName("calcVar")
     val sc = new SparkContext(conf)
 
     // $example on$
-    val observations = sc.parallelize(
+    val myData = sc.parallelize(
       Seq(
         Vectors.dense(1.0, 10.0, 100.0),
         Vectors.dense(2.0, 20.0, 200.0),
@@ -41,10 +42,11 @@ object SummaryStatisticsExample {
     )
 
     // Compute column summary statistics.
-    val summary: MultivariateStatisticalSummary = Statistics.colStats(observations)
-    println(summary.mean)  // a dense vector containing the mean value for each column
-    println(summary.variance)  // column-wise variance
-    println(summary.numNonzeros)  // number of nonzeros in each column
+    val summary: MultivariateStatisticalSummary = Statistics.colStats(myData)
+    val priceMean = summary.mean
+    val priceStandDev = sqrt(summary.variance)
+
+    return priceStandDev
     // $example off$
 
     sc.stop()
