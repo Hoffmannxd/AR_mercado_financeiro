@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>Web Client for risk analysis</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <script src="/chart/Chart.min.js"></script>
+</head>
+
+<body>
+
+    <div class="filter">
+        <div class="filter__title">ANALISYS PARAMETERS</div>
+        <hr class="filter__divisor" />
+        <div class="filter__input-area">
+            <form id="form_data" method="post">
+                <span class="label">End date</span> <input id="end_date" type="date" class="filter__date"/>
+                <span class="label">Delta</span> <input id="delta" type="number" min="1" class="filter__range" />
+                <span class="label">Index</span><select id="index" class="filter__target">
+                    <option>
+                        BSP
+                    </option>
+                </select>
+                <button id="btn-exe" class="filter__button">Ok!</button>
+            </form>
+        <hr class="filter__divisor" />
+        </div>
+
+    </div>
+
+    <div class="canvas-area" id="canvasArea">
+        <canvas id="myChart" height="180" ></canvas>
+    </div>
+
+    <script src="/jquery/jquery.min.js"></script>
+    <script>
+    function plotGraph(data_response){
+        //set canvas to visivel
+        document.getElementById('canvasArea');
+        canvasArea.style.display = 'block';
+
+        var ctx = document.getElementById('myChart');
+        ctx.style.backgroundColor = '#7fa7e8';
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: "Analysis grpah",
+                    borderColor:"#f03779",
+                    data: data_response
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        type: 'linear',
+                    }]
+                },
+                layout: {
+                    padding : {
+                        left: 25,
+                        right: 25,
+                        top: 25,
+                        bottom: 25
+                    }
+                }
+            }
+        });
+    }
+
+    $($('#form_data').on('submit', function(event){
+        event.preventDefault();
+
+        var json_data = {};
+        var e_d = $("#end_date").val();
+        var d = $("#delta").val();
+        var idx = $("#index").val();
+
+        console.log(idx);
+
+
+        json_data.end_date= e_d;
+        json_data.delta= d;
+        json_data.index= idx;
+
+
+        console.log(json_data);
+
+        $.ajax({
+            url: '/ar_mf',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(json_data),
+            success: function(response){
+                //console.log(response);
+                plotGraph(response);
+            }
+        });
+    }));
+
+    $(document).ready(function() {
+        document.getElementById('canvasArea');
+        canvasArea.style.display = 'none';
+    })
+    </script>
+</body>
+
+
+</html>

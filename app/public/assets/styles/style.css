@@ -1,12 +1,21 @@
 * {
     box-sizing: border-box;
     background-color: #4286f4;
+    margin: 0px;
 }
 
 body {
     color: white;
     font-family: sans-serif, helvetica, verdana;
+    //background-color: #4F93FF;
+    margin: 0px;
 }
+
+html {
+    margin: 0px;
+}
+
+
 
 .label {
     display: block;
@@ -22,12 +31,13 @@ body {
 
 .filter {
     width: 40%;
-    margin-top:15px;
     margin-left: auto;
     margin-right: auto;
     //border: 2px solid white;
     //border-radius: 30px;
     padding: 0px 0px;
+    background-color: #4286f4;
+    min-height: 100%;
 }
 
 .filter__title {
@@ -41,8 +51,8 @@ body {
 
 .filter__input-area {
     border-top: 10px solid #7fa7e8;
-    border-bottom: 2px solid #7fa7e8;
-    border-radius: 20px;
+    border-bottom: 10px solid #7fa7e8;
+    //border-radius: 20px;
     padding-top: 60px;
 }
 
@@ -104,4 +114,22 @@ body {
     border-radius: 10px;
     border: 2px solid white;
     background-color: #4F93FF;
+}
+
+
+.filter__divisor{
+    display:block;
+    position: absolute;
+    left: 0;
+    width: 250%;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+.canvas-area{
+    padding: 25px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
