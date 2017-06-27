@@ -1,0 +1,2 @@
+1 - Script R tem que receber pela interface sD,eD e ativo. Tratando erro/convertendo recebido pelo front
+2 - Retornar .csv que será input do scala
