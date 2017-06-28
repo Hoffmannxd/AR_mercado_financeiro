@@ -29,8 +29,8 @@
                 <br />
                 <br />
                 <div class="center input-group">
-                    <span class="label input-group-addon">Index</span>
-                    <select id="index" class="filter__target">
+                    <select id="index" class="filter__target form-control" placeholder="Index">
+                        <option selected disabled>Index</option>
                         <option>
                             BSP
                         </option>
@@ -50,39 +50,37 @@
 
     <script src="/jquery/jquery.min.js"></script>
     <script>
-    function plotGraph(data_response){
+    function plotGraph(g){
         //set canvas to visivel
         document.getElementById('canvasArea');
         canvasArea.style.display = 'block';
 
         var ctx = document.getElementById('myChart');
-        ctx.style.backgroundColor = '#7fa7e8';
+        //ctx.style.backgroundColor = '#7fa7e8';
         var chart = new Chart(ctx, {
             // The type of chart we want to create
-            type: 'scatter',
+            labels: index,
+            type: 'line',
             data: {
-                datasets: [{
-                    label: "Analysis grpah",
-                    borderColor:"#f03779",
-                    data: data_response
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        type: 'linear',
-                    }]
-                },
-                layout: {
-                    padding : {
-                        left: 25,
-                        right: 25,
-                        top: 25,
-                        bottom: 25
-                    }
-                }
+                datasets: g
             }
         });
+    }
+
+    function newGraph(data_response, data_label, g, color){
+        var graphOpts = {
+            label: data_label,
+            data: data_response,
+            backgroundColor: color,
+            borderColor: color,
+            fill: false,
+            borderDash: [5, 5],
+            pointRadius: 15,
+        }
+
+        g.push(graphOpts);
+
+        return g;
     }
 
     $($('#form_data').on('submit', function(event){
@@ -110,7 +108,14 @@
             data: JSON.stringify(json_data),
             success: function(response){
                 //console.log(response);
-                plotGraph(response);
+                var g = [];
+                g = newGraph(response.open, "Open", g, 'rgb(255, 99, 132)');
+                g = newGraph(response.close, "Close", g, 'rgb(54, 162, 235)');
+                plotGraph(g);
+                console.log(response.avg);
+                $('#response-data-area').html("Desvio padrao: " + response.desvio + "<br />");
+                $('#response-data-area').append("Media: " + response.avg + "<br />");
+                $('#response-data-area').append("Maximum drawdown: " + response.mdd + "<br />");
             }
         });
     }));
@@ -120,6 +125,9 @@
         canvasArea.style.display = 'none';
     })
     </script>
+    <p id="response-data-area">
+
+    </p>
 </body>
 
 
