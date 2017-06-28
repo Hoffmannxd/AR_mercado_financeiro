@@ -20,7 +20,7 @@ tickers <- c("^BVSP")
 getSymbols(tickers, src = "yahoo", from = startDate, to = endDate)
 
 #Exportando dados
-write.table(BVSP,file="bvspprices.csv",sep=",")
+write.table(na.omit(BVSP),file="bvspprices.csv",sep=",")
 
 
 #plota o gráfico
