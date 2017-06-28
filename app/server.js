@@ -12,6 +12,7 @@ app.use(express.static("public"));
 
 app.use("/chart", express.static("./../node_modules/chart.js/dist/"));
 app.use("/jquery", express.static("./../node_modules/jquery/dist/"));
+app.use("/bootstrap", express.static("./../node_modules/bootstrap/dist/"));
 
 app.post('/ar_mf', function (req, res) {
 

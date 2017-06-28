@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Web Client for risk analysis</title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
     <script src="/chart/Chart.min.js"></script>
 </head>
@@ -10,15 +11,32 @@
     <div class="filter">
         <div class="filter__title">ANALISYS PARAMETERS</div>
         <hr class="filter__divisor" />
+        <ul class="nav nav-tabs nav--style">
+            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About us</a></li>
+            <li role="presentation"><a href="#">Description</a></li>
+        </ul>
         <div class="filter__input-area">
             <form id="form_data" method="post">
-                <span class="label">End date</span> <input id="end_date" type="date" class="filter__date"/>
-                <span class="label">Delta</span> <input id="delta" type="number" min="1" class="filter__range" />
-                <span class="label">Index</span><select id="index" class="filter__target">
-                    <option>
-                        BSP
-                    </option>
-                </select>
+                <div class="center input-group">
+                    <span class="label input-group-addon">End date</span> <input id="end_date" type="date" class="filter__date form_control"/>
+                </div>
+                <br />
+                <br />
+                <div class="center input-group">
+                    <span class="label input-group-addon">Delta</span> <input id="delta" type="number" min="1" class="filter__range form_control" />
+                </div>
+                <br />
+                <br />
+                <div class="center input-group">
+                    <span class="label input-group-addon">Index</span>
+                    <select id="index" class="filter__target">
+                        <option>
+                            BSP
+                        </option>
+                    </select>
+                </div>
+
                 <button id="btn-exe" class="filter__button">Ok!</button>
             </form>
         <hr class="filter__divisor" />

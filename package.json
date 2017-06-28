@@ -20,6 +20,7 @@
   "homepage": "https://github.com/aracytopterm/AR_mercado_financeiro#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "chart.js": "^2.6.0",
     "express": "^4.15.3",
     "jquery": "^3.2.1",

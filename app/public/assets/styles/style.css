@@ -1,13 +1,14 @@
 * {
     box-sizing: border-box;
-    background-color: #4286f4;
     margin: 0px;
+    //background-color: #3b5998;
 }
 
 body {
-    color: white;
+    color: #3b5998;
     font-family: sans-serif, helvetica, verdana;
-    //background-color: #4F93FF;
+    //background-color: #3b5998;
+    //background-color: white;
     margin: 0px;
 }
 
@@ -18,25 +19,26 @@ html {
 
 
 .label {
-    display: block;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    //display: block;
+    //width: 80%;
+    //margin-left: auto;
+    //margin-right: auto;
     text-align: left;
-    font-size: 1.6em;
-    padding-bottom:17px;
-    color: white;
-    font-weight: 900;
+    font-size: 1.4em;
+    //padding-bottom:17px;
+    //color: white;
+    color: #3b5998;
+    font-weight: 200;
 }
 
 .filter {
-    width: 40%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    //border: 2px solid white;
+    //border: 2px solid #3b5998;;
     //border-radius: 30px;
     padding: 0px 0px;
-    background-color: #4286f4;
+    //background-color: #4286f4;
     min-height: 100%;
 }
 
@@ -45,8 +47,8 @@ html {
     text-align: center;
     padding: 40px 0px 40px 0px;
     font-size: 2.1em;
-    font-weight: 900;
-    text-decoration: underline;
+    font-weight: 200;
+    //text-decoration: underline;
 }
 
 .filter__input-area {
@@ -54,51 +56,56 @@ html {
     border-bottom: 10px solid #7fa7e8;
     //border-radius: 20px;
     padding-top: 60px;
+    //text-align: center;
 }
 
 
 .filter__date {
-    display: block;
-    margin: 0px auto 50px auto;
-    width: 80%;
-    font-size: 1.6em;
+    //display: block;
+    //margin: 0px auto 50px auto;
+    //width: 80%;
+    font-size: 1.4em;
     text-align: left;
-    border: none;
-    border-bottom: 3px solid white;
-    border-radius: 10px;
-    min-height: 45px;
-    font-weight: 300;
-    color: white;
+    //border: none;
+    //border-bottom: 3px solid white;
+    //border-radius: 10px;
+    //min-height: 45px;
+    //font-weight: 300;
+    //color: white;
+    color: #3b5998;
 }
 
 
 .filter__range {
-    display: block;
-    margin: 0px auto 50px auto;
-    width: 80%;
+    //display: block;
+    //margin: 0px auto 50px auto;
+    //width: 80%;
     font-size: 1.4em;
     text-align: left;
-    border: none;
-    border-bottom: 3px solid white;
-    border-radius: 10px;
-    font-size: 1.4em;
-    min-height: 45px;
-    font-weight: 300;
-    color: white;
+    //border: none;
+    //border-bottom: 3px solid white;
+
+    //border-radius: 10px;
+    //min-height: 45px;
+    //font-weight: 300;
+    //color: white;
+    color: #3b5998;
 }
 
 .filter__target {
-    display: block;
+    //display: block;
     margin: 0px auto 50px auto;
-    width: 80%;
+    //width: 80%;
+    //font-size: 1.6em;
+    //border: none;
+    //border-bottom: 3px solid white;
+    //border-radius: 10px;
     font-size: 1.4em;
-    border: none;
-    border-bottom: 3px solid white;
-    border-radius: 10px;
-    font-size: 1.4em;
-    min-height: 45px;
-    font-weight: 300;
-    color: white;
+    //min-height: 45px;
+    //font-weight: 300;
+    //color: white;
+    color: #3b5998;
+
 }
 
 
@@ -107,13 +114,13 @@ html {
     margin: 40px auto 50px auto;
     padding: 15px 0px;
     text-align: center;
-    min-width: 50%;
+    min-width: 20%;
     font-size: 1.4em;
     font-weight: 900;
     color: white;
     border-radius: 10px;
     border: 2px solid white;
-    background-color: #4F93FF;
+    background-color: #3b5998;
 }
 
 
@@ -132,4 +139,39 @@ html {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav--style {
+    background-color: #3b5998;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: white;
+    text-align:center;
+
+}
+
+.nav--style li {
+    float:none;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    margin: auto;
+}
+
+.nav--style li a:hover {
+    background-color: #7fa7e8;
+}
+
+.nav--style li a:focus{
+    background-color: white;
+    color: black;
+}
+
+.nav--style li a {
+    color: white;
 }
