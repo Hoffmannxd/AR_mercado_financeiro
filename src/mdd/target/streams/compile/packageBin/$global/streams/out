@@ -1,11 +1,15 @@
 [0m[[0minfo[0m] [0mPackaging /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/target/scala-2.11/simple-project_2.11-1.0.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
-[0m[[0mdebug[0m] [0m	mddCalc$.class[0m
-[0m[[0mdebug[0m] [0m	  /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/target/scala-2.11/classes/mddCalc$.class[0m
+[0m[[0mdebug[0m] [0m	mddApp_old$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/target/scala-2.11/classes/mddApp_old$.class[0m
 [0m[[0mdebug[0m] [0m	mddApp$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/target/scala-2.11/classes/mddApp$.class[0m
-[0m[[0mdebug[0m] [0m	mddApp.class[0m
-[0m[[0mdebug[0m] [0m	  /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/target/scala-2.11/classes/mddApp.class[0m
 [0m[[0mdebug[0m] [0m	mddCalc.class[0m
 [0m[[0mdebug[0m] [0m	  /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/target/scala-2.11/classes/mddCalc.class[0m
+[0m[[0mdebug[0m] [0m	mddApp.class[0m
+[0m[[0mdebug[0m] [0m	  /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/target/scala-2.11/classes/mddApp.class[0m
+[0m[[0mdebug[0m] [0m	mddApp_old.class[0m
+[0m[[0mdebug[0m] [0m	  /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/target/scala-2.11/classes/mddApp_old.class[0m
+[0m[[0mdebug[0m] [0m	mddCalc$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/aracy_t/projectReps/AR_mercado_financeiro/src/mdd/target/scala-2.11/classes/mddCalc$.class[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m

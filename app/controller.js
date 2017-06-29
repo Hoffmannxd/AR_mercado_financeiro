@@ -23,8 +23,10 @@ exports.exeCmd = function(str_cmd, j_data, res){
 		var avg = result[2];
 
 		//
-		var JSON_response_open = [];
-		var JSON_response_close = [];
+		var JSON_response_open = {};
+		var JSON_response_close = {};
+		var JSON_response_open_v = [];
+		var JSON_response_close_v = [];
 
 		var stream = fs.createReadStream(filepath);
     	csv.fromStream(stream, {headers: true})
@@ -32,15 +34,21 @@ exports.exeCmd = function(str_cmd, j_data, res){
 	            //console.log(data);
 				//console.log(data.Open);
 				//console.log(data.Close);
-				JSON_response_open.push(parseInt(data.Open));
-				JSON_response_close.push(parseInt(data.Close));
+				JSON_response_open = new Object();
+				JSON_response_open.x = parseInt(data.Index);
+				JSON_response_open.y = parseInt(data.Open);
+				JSON_response_open_v.push(JSON_response_open);
 
+				JSON_response_close = new Object();
+				JSON_response_close.x = parseInt(data.Index);
+				JSON_response_close.y = parseInt(data.Close);
+				JSON_response_close_v.push(JSON_response_close);
         	})
     		.on("end", function(){
 				var JSON_response = {};
 				JSON_response = new Object();
-				JSON_response.open = JSON_response_open;
-				JSON_response.close = JSON_response_close;
+				JSON_response.open = JSON_response_open_v;
+				JSON_response.close = JSON_response_close_v;
 				JSON_response.desvio = std_desvio;
 				JSON_response.avg = avg;
 				JSON_response.mdd = mdd;

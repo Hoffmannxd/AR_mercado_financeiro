@@ -59,10 +59,17 @@
         //ctx.style.backgroundColor = '#7fa7e8';
         var chart = new Chart(ctx, {
             // The type of chart we want to create
-            labels: index,
-            type: 'line',
+            type: 'scatter',
             data: {
                 datasets: g
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        type: 'linear',
+                        position: 'bottom'
+                    }]
+                }
             }
         });
     }
@@ -73,9 +80,7 @@
             data: data_response,
             backgroundColor: color,
             borderColor: color,
-            fill: false,
-            borderDash: [5, 5],
-            pointRadius: 15,
+            fill: false
         }
 
         g.push(graphOpts);
